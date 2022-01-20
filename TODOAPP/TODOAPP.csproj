@@ -22,4 +22,8 @@
       <ProjectReference Include="..\TODOAPP.Infrastructure\TODOAPP.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="client-app\src\views" />
+    </ItemGroup>
+
 </Project>
