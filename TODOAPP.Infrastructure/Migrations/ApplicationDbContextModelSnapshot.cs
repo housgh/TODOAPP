@@ -70,6 +70,16 @@ namespace TODOAPP.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "test@user.com",
+                            PasswordHash = "26396FC8C5F9C45A3E6BD38A4CFD1120126CE4E938B00F5FF559A740C260791E",
+                            Role = 1,
+                            Username = "test.user"
+                        });
                 });
 
             modelBuilder.Entity("TODOAPP.Domain.Entities.TODOTask", b =>
