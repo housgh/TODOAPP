@@ -6,6 +6,8 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
+        <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="5.0.0-preview.8.20414.8" />
+        <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.9" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,7 +25,33 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="client-app\src\views" />
+      <Content Include="client-app\.gitignore" />
+      <Content Include="client-app\public\favicon.ico" />
+      <Content Include="client-app\public\index.html" />
+      <Content Include="client-app\public\logo192.png" />
+      <Content Include="client-app\public\logo512.png" />
+      <Content Include="client-app\public\robots.txt" />
+      <Content Include="client-app\src\App.css" />
+      <Content Include="client-app\src\index.css" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <TypeScriptCompile Include="client-app\src\App.tsx" />
+      <TypeScriptCompile Include="client-app\src\components\create-edit-modal.tsx" />
+      <TypeScriptCompile Include="client-app\src\components\delete-modal.tsx" />
+      <TypeScriptCompile Include="client-app\src\components\navbar.tsx" />
+      <TypeScriptCompile Include="client-app\src\enums\role.ts" />
+      <TypeScriptCompile Include="client-app\src\enums\task-status.ts" />
+      <TypeScriptCompile Include="client-app\src\index.tsx" />
+      <TypeScriptCompile Include="client-app\src\models\http-result.ts" />
+      <TypeScriptCompile Include="client-app\src\models\login-model.ts" />
+      <TypeScriptCompile Include="client-app\src\models\login-result.ts" />
+      <TypeScriptCompile Include="client-app\src\models\todo-task.ts" />
+      <TypeScriptCompile Include="client-app\src\models\user.ts" />
+      <TypeScriptCompile Include="client-app\src\services\auth-service.ts" />
+      <TypeScriptCompile Include="client-app\src\services\todo-task-service.ts" />
+      <TypeScriptCompile Include="client-app\src\views\home.tsx" />
+      <TypeScriptCompile Include="client-app\src\views\login.tsx" />
     </ItemGroup>
 
 </Project>

@@ -33,7 +33,7 @@ namespace TODOAPP.Core.Implementations
 
         public bool Exists(Func<T, bool> condition)
         {
-            return _context.Set<T>().Any(condition);
+            return _context.Set<T>().AsNoTracking().Any(condition);
         }
 
         public async Task AddAsync(T obj)

@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TODOAPP.Core.Interfaces;
-using TODOAPP.Domain.Models;
+using TODOAPP.Domain.Entities;
 
 namespace TODOAPP.Domain.Contexts
 {

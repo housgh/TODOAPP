@@ -1,6 +1,5 @@
 export enum TaskStatus{
-    new,
-    pending,
-    inProgress,
-    complete
+    Pending = "Pending",
+    InProgress = "InProgress",
+    Complete = "Complete"
 }

@@ -1,6 +1,6 @@
 using TODOAPP.Domain.Enums;
 
-namespace TODOAPP.Domain.Models
+namespace TODOAPP.Domain.Entities
 {
     public class User
     {

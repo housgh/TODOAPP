@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TODOAPP.Core.Implementations;
+using TODOAPP.Core.Interfaces;
 using TODOAPP.Domain.Models;
 
 namespace TODOAPP.Controllers
@@ -9,15 +10,15 @@ namespace TODOAPP.Controllers
     [Route("api/[Controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly AuthService _authService;
+        private readonly IAuthService _authService;
 
-        public AuthController(AuthService authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
         
         [HttpPost]
-        public async Task<IActionResult> Index(LoginModel model)
+        public async Task<IActionResult> LoginAsync(LoginModel model)
         {
             if (string.IsNullOrWhiteSpace(model.Username) 
                 || string.IsNullOrWhiteSpace(model.Password))
@@ -27,12 +28,13 @@ namespace TODOAPP.Controllers
 
             var result = await _authService.LoginAsync(model);
 
-            if (!result.IsSuccess || string.IsNullOrEmpty(result.Token))
+            return result.IsSuccess switch
             {
-                return new StatusCodeResult(500);
-            }
-
-            return Ok(new {data = result});
+                false when string.IsNullOrEmpty(result.Token) && string.IsNullOrEmpty(result.Message) =>
+                    new StatusCodeResult(500),
+                false => Unauthorized(result.Message),
+                _ => Ok(new {data = result})
+            };
         }
     }
 }

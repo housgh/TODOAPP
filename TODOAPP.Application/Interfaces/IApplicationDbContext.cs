@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using TODOAPP.Domain.Entities;
 using TODOAPP.Domain.Models;
 
 namespace TODOAPP.Core.Interfaces

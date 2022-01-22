@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using TODOAPP.Core.Interfaces;
+using TODOAPP.Domain.Entities;
 using TODOAPP.Domain.Models;
 
 namespace TODOAPP.Core.Implementations
